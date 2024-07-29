@@ -2463,7 +2463,6 @@ input, select, textarea {
 				width: 100%;
 		}
 /*************************************************************/
-
 	.skills {
 		border-radius: 5px;
 		border: 0;
@@ -2472,10 +2471,25 @@ input, select, textarea {
 		margin: 7px; /* Adjust spacing around each image */
 	}
 
-		.skills img {
-			border-radius: 5px;
-			width: 150px;
+	/* Ensure images are responsive */
+	.skills img {
+		border-radius: 5px;
+		width: 100%; /* Make images take up full width of their container */
+		max-width: 150px; /* Ensure they don't get too large */
+	}
+
+	/* Media query for tablet and mobile */
+	@media (max-width: 768px) {
+		.skills {
+			width: calc(33.33% - 20px); /* 3 items per row */
 		}
+	}
+
+	@media (max-width: 480px) {
+		.skills {
+			width: calc(50% - 20px); /* 2 items per row */
+		}
+	}
 /* List */
 
 	ol {
@@ -2599,6 +2613,7 @@ input, select, textarea {
 			}
 
 		@media screen and (max-width: 480px) {
+
 
 			ul.actions:not(.fixed) {
 				-moz-flex-direction: column;
